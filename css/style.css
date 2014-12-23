@@ -26,7 +26,7 @@ figcaption {
     font-family: Georgia, "New Times Roman", serif; */
     font: normal 0.75em/1.5em 'Elsie Swash Caps', "New Times Roman", serif;
     color: #777;
-    text-align: right;
+    text-align: left;
 }
 
 /* Class selector (applied to as many elements as you like) */
@@ -40,7 +40,6 @@ figcaption {
 /* ID selector (apply to one unique element per page) */
 
 #logo { /*select elements with id ="logo" */
-    background-color: aqua;
 }
 
 /* Descendent Selectors */
@@ -50,6 +49,10 @@ figcaption {
 
 #logo h2 {
     font-family: 'Elsie Swash Caps', cursive;
+}
+
+#logo p{
+    font-size: 2em;
 }
 
 /* Pseudo Selector */
@@ -66,3 +69,90 @@ figcaption {
 #details a:active{
     color: red;
 }
+
+/*//// MEDIA ////*/
+img,video,audio{
+    max-width: 100%;
+}
+
+/*////////// LAYOUT //////*/
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width:960px;
+    margin: 0 auto;
+}
+
+.col-1{
+  float: left;
+  width: 32%; /* 100-4%(2% margin each side) divided by 3 */
+  background: #ccc;
+}
+
+.col-2{
+  float: left;
+  width: 66%; /* 32*2 + 2% extra margin*/
+  background: #ccc;
+}
+
+.col-3{
+  float: left;
+  background: #ccc;
+}
+
+.clearfix:after{
+    content:".";
+    display: block;
+    clear:both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+}
+
+/*chooses all classes with col-1 */
+[class*="col-"]{
+    margin-left: 2%;
+}
+
+.first {
+    margin-left: 0%;
+}
+
+/* SECTIONS */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+
+/*////// SOCIAL SECTION //////*/
+#social{
+    position:fixed;
+    top:200px;
+    right:20px;
+    width:40px;
+    z-index: 1;
+}
+
+#social a {
+    display:block;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+}
+
